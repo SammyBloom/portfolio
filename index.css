@@ -1,0 +1,38 @@
+nav {
+    padding: 0;
+    margin-bottom: 9px;
+    text-align: center;
+}
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: mediumslateblue;
+    border: 2px solid black;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 0;
+    padding: 10px 14px 8px 14px;
+    font-size: 17px;
+    margin-right: 40px;
+}
+/*to create a vertical bar when the width reaches 599px*/
+@media screen and (max-width: 599px) {
+    nav a{
+        display: block;
+    }
+}
+/*just to decrease the margin-right when it reaches min and max width of 600px and 899px respectively*/
+@media screen and (min-width: 600px) and (max-width: 899px) {
+    nav a{
+        margin-right: 30px;
+    }
+}
+
+.stack {
+    color: #222;
+    letter-spacing: .02em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 45px;
+    line-height: 60px;
+}
