@@ -5,6 +5,10 @@ html {
     scroll-behavior: smooth;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     min-height: 100%;
     color: #333;
@@ -24,10 +28,11 @@ body {
 }
 
 .content {
-    padding-left: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-.header {
+.menu {
     z-index: 1111;
     background-color: #fff;
     padding-top: 20px;
@@ -70,15 +75,82 @@ nav a {
     }
 }
 
+ul {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+    line-height: 2.0rem;
+}
+
+@media screen and (max-width: 991px) {
+    .paragraph {
+        line-height: 28px;
+    }
+}
+.paragraph {
+    color: #222;
+    letter-spacing: .02em;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    display: block;
+}
+
+@media screen and (max-width: 991px) {
+    .paragraph.about {
+        font-size: 1.1rem;
+    }
+}
+.paragraph.about {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+}
+
+.aboutme{
+    padding-top: 120px;
+    inline-size: 50%;
+    overflow-wrap: break-word;
+}
+
+.green {
+    color: lightseagreen;
+}
+
 .stack {
     color: #222;
     letter-spacing: .02em;
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 45px;
-    line-height: 60px;
+    line-height: 60px; 
 }
 
 .section {
-    padding-top: 100px;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.stack.heading {
+    display: flex;
+    justify-content: center;
+}
+
+.section2 {
+    padding-top: 200px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.border {
+    background: ghostwhite; 
+    font-size: 20px; 
+    padding: 10px 5px 10px 5px; 
+    border: 5px solid wheat; 
+    height: 200px;
+    inline-size: 33.3%;
+    overflow-wrap: break-word;
+    text-align: center;
 }
