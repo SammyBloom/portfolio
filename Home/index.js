@@ -1,7 +1,6 @@
 /*
     Weather API call for Lagos, Nigeria using fetch()
 */
-const fetch = require('node-fetch');
 
 const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=Lagos';
 const options = {
