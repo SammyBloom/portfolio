@@ -16,15 +16,15 @@ body {
     font-family: Arial,sans-serif;
     font-size: 14px;
     line-height: 20px;
-
+    -webkit-font-smoothing: antialiased;
     -webkit-text-fill-color: inherit;
+    text-rendering: optimizeLegibility;
     background-color: transparent;
     background-image: linear-gradient(rgba(119,117,255,.2),rgba(128,170,230,.18));
     background-clip: padding-box;
     display: block;
     overflow: visible;
     padding-bottom: 230px;
-    
 }
 
 .content {
@@ -93,8 +93,9 @@ ul {
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    
+    font-size: 1.2rem;
+    line-height: 1.7rem;
     display: block;
 }
 
@@ -105,14 +106,20 @@ ul {
 }
 .paragraph.about {
     text-align: left;
-    font-size: 1.2rem;
-    line-height: 1.7rem;
 }
 
 .aboutme{
     padding-top: 120px;
     inline-size: 50%;
     overflow-wrap: break-word;
+}
+
+.aboutimg {
+    inline-size: 50%;
+    justify-content: flex-end;
+    padding: 60px 0px 400px 200px;
+    display: block;
+    overflow: visible;
 }
 
 .green {
@@ -128,9 +135,29 @@ ul {
     line-height: 60px; 
 }
 
+/* @media screen and (max-width: 991px){
+    .my-image {
+        width: 100%;
+    }
+} */
+
+img {
+    width: 100%;
+    vertical-align: middle;
+    display: inline-block; /* remove extra space below image */
+}
+
+@media screen and (max-width: 991px){
+    .section {
+        flex-direction: column;
+    }
+}
+
 .section {
     padding-left: 3%;
     padding-right: 3%;
+    justify-content: space-between;
+    display: flex;
 }
 
 .stack.heading {
@@ -139,7 +166,7 @@ ul {
 }
 
 .section2 {
-    padding-top: 200px;
+    padding-top: 50px;
     padding-left: 2%;
     padding-right: 2%;
 }
@@ -147,9 +174,10 @@ ul {
 .border {
     background: ghostwhite; 
     font-size: 20px; 
-    padding: 10px 5px 10px 5px; 
-    border: 5px solid wheat; 
-    height: 200px;
+    padding: 15px 10px 15px 10px; 
+    border: 5px solid wheat;
+    border-radius: 5px; 
+    height: 300px;
     inline-size: 33.3%;
     overflow-wrap: break-word;
     text-align: center;
