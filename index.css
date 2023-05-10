@@ -213,13 +213,17 @@ img {
     margin-right: 8%;
 }
 
-.experience-block {
+.experience-title {
     display: flex;
+    margin: auto;
+}
+
+.experience-block {
     margin: auto;
     background: ghostwhite; 
     border-radius: 5px;
     box-shadow: 2px 2px 2px 2px lightgray;
-    width: 65%;
+    width: 70%;
     height: auto;
     padding-left: 20px;
     padding-right: 10px;
