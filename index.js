@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 /*
     Weather API call for Lagos, Nigeria using fetch()
 */
@@ -6,7 +8,7 @@ const url = "https://weatherapi-com.p.rapidapi.com/current.json?q=Lagos";
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': '49d0fcef32mshd7c75c54b9ff7fap152f81jsn2f10f04c9a2a',
+    'X-RapidAPI-Key': process.env.RapidAPI_KEY,
     'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
   }
 };
