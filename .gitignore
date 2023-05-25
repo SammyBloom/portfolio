@@ -1,3 +1,4 @@
 .hintrc
 .env
 node_modules/
+.github

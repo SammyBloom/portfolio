@@ -1,13 +1,41 @@
 require("dotenv").config();
+
+/*Show Menu If Hidden*/
+const navMenu = document.getElementById('nav-menu'),
+      navToggle =  document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close');
+
+if (navToggle){
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.add('show-menu');
+  });
+}     
+
+// Close Menu if open
+if (navClose) {
+  navClose.addEventListener("click", () => {
+    navMenu.classList.remove('show-menu');
+  });
+}
+
+// Remove Menu Mobile
+const navLink = document.querySelectorAll('.nav_link');
+
+function linkAction() {
+  const navMenu = document.getElementById('nav-menu');
+  navMenu.classList.remove('show-menu');
+}
+
+navLink.forEach(n => n.addEventListener('click', linkAction));
+
 /*
     Weather API call for Lagos, Nigeria using fetch()
 */
 
 const api_key = process.env.RapidAPI_KEY;
-console.log(api_key);
 
 const url = "https://weatherapi-com.p.rapidapi.com/current.json?q=Lagos";
-var options = {
+const options = {
   method: 'GET',
   headers: {
     'X-RapidAPI-Key': api_key,
@@ -17,7 +45,7 @@ var options = {
 
 
 async function getapi(){
-// console.log(options);
+console.log(options);
   try {
     const response = await fetch(url, options);
     const result = await response.json();
