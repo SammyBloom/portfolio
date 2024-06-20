@@ -13,6 +13,15 @@
 
     /*Fonts*/
     --body-font: 'Poppins', sans-serif;
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    --letter-spacing: .02rem;
+    --line-height: 1.7rem;
 
     /*Colors*/
     --background-color: linear-gradient(rgba(119,117,255,.2), rgba(128,170,230,.18));
@@ -33,12 +42,14 @@ html {
 body {
     margin: var(--header-height);
     font-family: var(--body-font);
+    font-size: var(--normal-font-size);
     background-image: var(--background-color);
     background-color: var(--background-effect);
     background-clip: padding-box;
     color: var(--text-color);
     -webkit-font-smoothing: antialiased;
     -webkit-text-fill-color: inherit;
+    overflow: visible;
     text-rendering: optimizeLegibility;
 }
 
@@ -50,6 +61,7 @@ body {
     display: -o-flex;
     justify-content: center;
     margin: var(--header-height);
+
 }
 
 .nav-bar a{
@@ -57,20 +69,32 @@ body {
     padding: .3rem var(--padding-height);
     color: var(--text-color);
     text-decoration: none;
+    font-size: var(--h3-font-size);
+    font-weight: bold;
 }
 
 .nav-bar a:hover{
     color: var(--hover-effect);
 }
 
-/* Hompage Styling */
+/* Homepage Styling */
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.aboutMe {
+    display: block;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
 .myName {
     color: var(--color-effect);
     text-transform: uppercase;
-}
-
-.jobTitle {
-    display: inline;
 }
 
 .jobTitle span {
@@ -135,4 +159,8 @@ body {
     100% {
         opacity: 0;
     }
+}
+
+.summary {
+    margin-top: 2.5rem;
 }
