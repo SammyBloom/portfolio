@@ -97,7 +97,7 @@ body {
     text-transform: uppercase;
 }
 
-.jobTitle span {
+.jobTitle span{
     opacity: 0;
     overflow: hidden;
     position: absolute;
