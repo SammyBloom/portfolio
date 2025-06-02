@@ -16,7 +16,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -42,9 +42,9 @@ jobs:
         
       - name: Upload Artifacts
         if: success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: githun-pages-build
+          name: github-pages-build
           path: ./build
          
       - name: Deploy to GitHub Pages
@@ -53,7 +53,7 @@ jobs:
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: ./build
-          publish_branch: gh-pages
+          publish_branch: main
           force_orphan: true
           keep_files: false
           commit_message: 'Deploy fresh changes to GitHub Pages from GitHub Actions' 
