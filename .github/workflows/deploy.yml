@@ -29,6 +29,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
+          npm i core-util-is
           npm ci
 
       - name: Static Code Analysis for Linting
