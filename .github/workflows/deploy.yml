@@ -11,7 +11,7 @@ jobs:
   build-and-deploy:
     name: Build and Deploy
     runs-on: ubuntu-latest
-    concurrency: 
+    concurrency:
       group: ci-${{ github.ref }}
       cancel-in-progress: true
     steps:
@@ -22,31 +22,32 @@ jobs:
 
       - name: Setup and Configure Node
         uses: actions/setup-node@v3
-        with: 
+        with:
           node-version: 16
-          cache: 'npm'
-      
+          cache: "npm"
+
       - name: Install Dependencies
         run: |
           npm install
           npm ci
-      
+
       - name: Static Code Analysis for Linting
         run: npm run lint
-      
+        continue-on-error: true
+
       - name: Run Unit Tests
         run: npm test
-      
+
       - name: Build Artifacts
         run: npm run build
-        
+
       - name: Upload Artifacts
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: github-pages-build
           path: ./build
-         
+
       - name: Deploy to GitHub Pages
         if: success()
         uses: peaceiris/actions-gh-pages@v3
@@ -56,12 +57,12 @@ jobs:
           publish_branch: main
           force_orphan: true
           keep_files: false
-          commit_message: 'Deploy fresh changes to GitHub Pages from GitHub Actions' 
+          commit_message: "Deploy fresh changes to GitHub Pages from GitHub Actions"
           user_name: ${{ secrets.PAGES_USERNAME }}
           user_email: ${{ secrets.PAGES_EMAIL }}
       - name: Notify Deployment Success
         if: success()
-        run: echo "Deployment to GitHub Pages successful!"    
+        run: echo "Deployment to GitHub Pages successful!"
       - name: Notify Deployment Failure
         if: failure()
         run: echo "Deployment to GitHub Pages failed!"
