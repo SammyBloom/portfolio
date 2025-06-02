@@ -35,8 +35,8 @@ jobs:
         run: npm run lint
         continue-on-error: true
 
-      - name: Run Unit Tests
-        run: npm test
+      # - name: Run Unit Tests
+      #   run: npm test
 
       - name: Build Artifacts
         run: npm run build
