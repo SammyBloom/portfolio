@@ -26,6 +26,13 @@ jobs:
           node-version: "22.x"
           cache: "npm"
 
+      #    Temporary step to clear npm installation cache
+      - name: Clean cache
+        run: |
+          npm cache clean --force
+          rm -rf node_modules
+          rm package-lock.json
+
       - name: Install Dependencies
         run: |
           npm install
